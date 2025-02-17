@@ -1,7 +1,6 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { SiDiscord } from "react-icons/si";
-import { Menu } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -10,11 +9,6 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import {
-  Sheet,
-  SheetContent,
-  SheetTrigger,
-} from "@/components/ui/sheet";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { useAuth, loginWithDiscord, getDiscordAvatarUrl } from "@/lib/auth";
 
@@ -24,39 +18,30 @@ export function Navbar() {
   return (
     <nav className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between px-4">
-        {/* Logo */}
-        <div className="flex items-center space-x-2">
-          <SiDiscord className="h-6 w-6 text-primary" />
-          <span className="text-lg font-bold">EduSphere</span>
-        </div>
-
-        {/* Mobile Menu */}
-        <Sheet>
-          <SheetTrigger asChild className="lg:hidden">
-            <Button variant="ghost" size="icon">
-              <Menu className="h-6 w-6" />
-            </Button>
-          </SheetTrigger>
-          <SheetContent side="right" className="w-64">
-            <div className="flex flex-col space-y-4 mt-6">
+        {/* Logo with Dropdown */}
+        <DropdownMenu>
+          <DropdownMenuTrigger className="flex items-center space-x-2 outline-none">
+            <SiDiscord className="h-6 w-6 text-primary" />
+            <span className="text-lg font-bold">EduSphere</span>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="start" className="w-48">
+            <DropdownMenuItem asChild>
               <Link href="/">
-                <a className="text-sm font-medium transition-colors hover:text-primary">
-                  Home
-                </a>
+                <a className="w-full cursor-pointer">Home</a>
               </Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem asChild>
               <Link href="/commands">
-                <a className="text-sm font-medium transition-colors hover:text-primary">
-                  Commands
-                </a>
+                <a className="w-full cursor-pointer">Commands</a>
               </Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem asChild>
               <Link href="/status">
-                <a className="text-sm font-medium transition-colors hover:text-primary">
-                  Status
-                </a>
+                <a className="w-full cursor-pointer">Status</a>
               </Link>
-            </div>
-          </SheetContent>
-        </Sheet>
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
 
         {/* Desktop Navigation Links */}
         <div className="hidden lg:flex flex-1 items-center justify-center space-x-6">
