@@ -1,3 +1,4 @@
+
 import { create } from 'zustand';
 
 interface User {
@@ -17,10 +18,23 @@ export const useAuth = create<AuthState>((set) => ({
   setUser: (user: User | null) => set({ user }),
 }));
 
+const DISCORD_CLIENT_ID = "YOUR_DISCORD_CLIENT_ID";
+const REDIRECT_URI = `${window.location.origin}/auth/callback`;
+
 export async function loginWithDiscord() {
-  window.location.href = 'https://discord.com/api/oauth2/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=identify%20guilds';
+  const params = new URLSearchParams({
+    client_id: DISCORD_CLIENT_ID,
+    redirect_uri: REDIRECT_URI,
+    response_type: 'code',
+    scope: 'identify guilds',
+    state: crypto.randomUUID()
+  });
+
+  window.location.href = `https://discord.com/oauth2/authorize?${params}`;
 }
 
 export function getDiscordAvatarUrl(user: User) {
-  return `https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.png`;
+  return user.avatar 
+    ? `https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.png`
+    : `https://cdn.discordapp.com/embed/avatars/${parseInt(user.discriminator) % 5}.png`;
 }
