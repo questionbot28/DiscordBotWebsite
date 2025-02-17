@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { SiDiscord } from "react-icons/si";
+import { Menu } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -9,6 +10,11 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { useAuth, loginWithDiscord, getDiscordAvatarUrl } from "@/lib/auth";
 
@@ -24,8 +30,36 @@ export function Navbar() {
           <span className="text-lg font-bold">EduSphere</span>
         </div>
 
-        {/* Navigation Links */}
-        <div className="flex-1 flex items-center justify-center space-x-6">
+        {/* Mobile Menu */}
+        <Sheet>
+          <SheetTrigger asChild className="lg:hidden">
+            <Button variant="ghost" size="icon">
+              <Menu className="h-6 w-6" />
+            </Button>
+          </SheetTrigger>
+          <SheetContent side="right" className="w-64">
+            <div className="flex flex-col space-y-4 mt-6">
+              <Link href="/">
+                <a className="text-sm font-medium transition-colors hover:text-primary">
+                  Home
+                </a>
+              </Link>
+              <Link href="/commands">
+                <a className="text-sm font-medium transition-colors hover:text-primary">
+                  Commands
+                </a>
+              </Link>
+              <Link href="/status">
+                <a className="text-sm font-medium transition-colors hover:text-primary">
+                  Status
+                </a>
+              </Link>
+            </div>
+          </SheetContent>
+        </Sheet>
+
+        {/* Desktop Navigation Links */}
+        <div className="hidden lg:flex flex-1 items-center justify-center space-x-6">
           <Link href="/">
             <a className="text-sm font-medium transition-colors hover:text-primary">
               Home
@@ -47,7 +81,7 @@ export function Navbar() {
         <div className="flex items-center space-x-4">
           <Button
             size="sm"
-            className="gap-2 bg-gradient-to-r from-primary to-blue-500 hover:from-primary/90 hover:to-blue-500/90"
+            className="gap-2 bg-gradient-to-r from-primary to-blue-500 hover:from-primary/90 hover:to-blue-500/90 hidden sm:flex"
             onClick={() => window.open("https://discord.com/oauth2/authorize?your-bot-url", "_blank")}
           >
             <SiDiscord className="h-4 w-4" />
