@@ -17,15 +17,15 @@ export function Navbar() {
 
   return (
     <nav className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center px-4">
+      <div className="container flex h-16 items-center justify-between px-4">
         {/* Logo */}
         <div className="flex items-center space-x-2">
           <SiDiscord className="h-6 w-6 text-primary" />
-          <span className="text-lg font-bold">DiscordBot</span>
+          <span className="text-lg font-bold">EduSphere</span>
         </div>
 
         {/* Navigation Links */}
-        <div className="flex items-center space-x-6 mx-6">
+        <div className="flex-1 flex items-center justify-center space-x-6">
           <Link href="/">
             <a className="text-sm font-medium transition-colors hover:text-primary">
               Home
@@ -43,8 +43,8 @@ export function Navbar() {
           </Link>
         </div>
 
-        {/* Auth Buttons - Pushed to the right */}
-        <div className="ml-auto flex items-center space-x-4">
+        {/* Auth Buttons */}
+        <div className="flex items-center space-x-4">
           <Button
             size="sm"
             className="gap-2 bg-gradient-to-r from-primary to-blue-500 hover:from-primary/90 hover:to-blue-500/90"

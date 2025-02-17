@@ -7,7 +7,7 @@ export function Footer() {
         <div className="flex flex-col items-center justify-center space-y-4">
           <div className="flex items-center space-x-2">
             <SiDiscord className="h-6 w-6 text-primary" />
-            <span className="text-lg font-bold">DiscordBot</span>
+            <span className="text-lg font-bold">EduSphere</span>
           </div>
           <div className="text-center space-y-2">
             <p className="text-sm text-muted-foreground">
