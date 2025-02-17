@@ -18,8 +18,8 @@ export const useAuth = create<AuthState>((set) => ({
   setUser: (user: User | null) => set({ user }),
 }));
 
-const DISCORD_CLIENT_ID = "YOUR_DISCORD_CLIENT_ID";
-const REDIRECT_URI = `${window.location.origin}/auth/callback`;
+const DISCORD_CLIENT_ID = import.meta.env.VITE_DISCORD_CLIENT_ID;
+const REDIRECT_URI = `${window.location.origin}/api/auth/callback`;
 
 export async function loginWithDiscord() {
   const params = new URLSearchParams({
