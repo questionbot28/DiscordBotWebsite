@@ -73,7 +73,7 @@ export function HeroSection() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="relative hidden sm:block"
+            className="relative block"
           >
             <div className="relative w-full aspect-square rounded-lg overflow-hidden shadow-2xl ring-1 ring-gray-900/10">
               <img
