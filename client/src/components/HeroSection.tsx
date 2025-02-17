@@ -77,7 +77,7 @@ export function HeroSection() {
           >
             <div className="relative w-full aspect-square rounded-lg overflow-hidden shadow-2xl ring-1 ring-gray-900/10">
               <img
-                src="https://cdn.discordapp.com/attachments/1247786337629769850/1340858985817051136/1000135879_processed.jpg.png"
+                src="https://cdn.discordapp.com/attachments/1247786337629769850/1340858985817051136/1000135879_processed.jpg.png?ex=67b3e3be&is=67b2923e&hm=5eb843edf74c25d8e9fbbc20baaffcc0a4f66e12d5be4f0ebc777311778230be&"
                 alt="Discord Bot"
                 className="w-full h-full object-cover"
               />
