@@ -17,7 +17,7 @@ export function Navbar() {
 
   return (
     <nav className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center justify-between px-4">
+      <div className="container flex h-16 items-center px-4">
         {/* Logo with Dropdown */}
         <DropdownMenu>
           <DropdownMenuTrigger className="flex items-center space-x-2 outline-none">
@@ -63,7 +63,7 @@ export function Navbar() {
         </div>
 
         {/* Auth Buttons */}
-        <div className="flex items-center gap-4 ml-auto mr-2">
+        <div className="flex items-center gap-4 ml-auto">
           <Button
             size="sm"
             className="gap-2 bg-gradient-to-r from-primary to-blue-500 hover:from-primary/90 hover:to-blue-500/90 hidden sm:flex"
