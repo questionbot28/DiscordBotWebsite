@@ -3,6 +3,17 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Badge } from "@/components/ui/badge";
 
 const commands = [
+  // Help Commands
+  {
+    name: "!help",
+    description: "Show study help menu",
+    category: "Help",
+  },
+  {
+    name: "!musichelp",
+    description: "Show music help menu",
+    category: "Help",
+  },
   // Study Commands
   {
     name: "!11",

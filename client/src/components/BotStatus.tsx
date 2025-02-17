@@ -4,9 +4,9 @@ import { Server, Users, Hash, Activity } from "lucide-react";
 
 export function BotStatus() {
   const stats = [
-    { icon: Server, label: "Servers", value: "1,000+" },
-    { icon: Users, label: "Users", value: "100,000+" },
-    { icon: Hash, label: "Channels", value: "5,000+" },
+    { icon: Server, label: "Servers", value: "1" },
+    { icon: Users, label: "Users", value: "16+" },
+    { icon: Hash, label: "Channels", value: "12" },
     { icon: Activity, label: "Uptime", value: "99.9%" },
   ];
 
