@@ -45,7 +45,7 @@ export function HeroSection() {
                 <Button
                   size="lg"
                   className="w-full sm:w-auto gap-2 bg-gradient-to-r from-primary to-blue-500 hover:from-primary/90 hover:to-blue-500/90"
-                  onClick={() => window.open("https://discord.com/oauth2/authorize?your-bot-url", "_blank")}
+                  onClick={() => window.open("https://discord.com/oauth2/authorize?client_id=1159874534485262410&permissions=8&integration_type=0&scope=bot", "_blank")}
                 >
                   <SiDiscord className="h-5 w-5" />
                   Add to Discord
@@ -61,7 +61,7 @@ export function HeroSection() {
                   variant="outline"
                   size="lg"
                   className="w-full sm:w-auto border-primary/20 hover:bg-primary/5"
-                  onClick={() => window.open("https://discord.gg/your-server", "_blank")}
+                  onClick={() => window.open("https://discord.gg/J3paY6YQkZ", "_blank")}
                 >
                   Join Support Server
                 </Button>

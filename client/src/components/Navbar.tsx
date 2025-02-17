@@ -67,7 +67,7 @@ export function Navbar() {
           <Button
             size="sm"
             className="gap-2 bg-gradient-to-r from-primary to-blue-500 hover:from-primary/90 hover:to-blue-500/90 hidden sm:flex"
-            onClick={() => window.open("https://discord.com/oauth2/authorize?your-bot-url", "_blank")}
+            onClick={() => window.open("https://discord.com/oauth2/authorize?client_id=1159874534485262410&permissions=8&integration_type=0&scope=bot", "_blank")}
           >
             <SiDiscord className="h-4 w-4" />
             Add to Discord
