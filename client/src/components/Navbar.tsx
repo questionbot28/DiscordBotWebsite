@@ -63,7 +63,7 @@ export function Navbar() {
         </div>
 
         {/* Auth Buttons */}
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-4 ml-auto">
           <Button
             size="sm"
             className="gap-2 bg-gradient-to-r from-primary to-blue-500 hover:from-primary/90 hover:to-blue-500/90 hidden sm:flex"
